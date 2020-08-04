@@ -48,7 +48,7 @@
 
 </table>
 
-<p>
+@*<p>
 
     @{ 
 
@@ -66,4 +66,25 @@
 
     }
 
-</p>
+</p>*@
+
+@*Html Helpers*@
+
+<div>
+
+    @{ string Name = "Name";}
+
+    @Html.Label("Textbox1", "Label Text")
+    @Html.TextBox("Textbox1")
+
+    @Html.LabelFor(x => Name)
+    @Html.TextBoxFor(X => Name)
+
+</div>
+
+@*Tag Helpers*@
+
+<form asp-controller="Home" asp-action="Contact">
+    <label asp-for="@Name">Tag Helper Version</label>
+    <input asp-for="@Name" />
+</form>
