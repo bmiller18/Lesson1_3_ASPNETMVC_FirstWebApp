@@ -69,7 +69,9 @@
 </p>*@
 
 @*Html Helpers*@
-
+<h2>Html Helper Examples</h2>
+<br />
+<br />
 <div>
 
     @{ string Name = "Name";}
@@ -81,9 +83,12 @@
     @Html.TextBoxFor(X => Name)
 
 </div>
-
+<br />
+<br />
 @*Tag Helpers*@
-
+<h2>Tag Helper Examples</h2>
+<br />
+<br />
 <form asp-controller="Home" asp-action="Contact">
     <label asp-for="@Name">Tag Helper Version</label>
     <input asp-for="@Name" />
