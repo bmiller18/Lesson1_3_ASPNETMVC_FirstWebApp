@@ -1,6 +1,69 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
+    string myText = "Hello from my Razor Text Area.";
+    string[] myArray = { "A", "B", "C", "D", "E", "F", "G" };
+    int[] array2 = { 1, 2, 3, 4, 5, 6, 7 };
 }
 <h2>@ViewData["Title"]</h2>
 
 <p>Use this page to detail your site's privacy policy.</p>
+<p>Here is what the myText variable states: @myText </p>
+
+<ul>
+    
+    @foreach(string item in myArray)
+    {
+        <li>@item</li>
+    }
+
+</ul>
+
+<table>
+    @foreach(int column in array2)
+    {
+
+    <tr>
+
+        <td style="border: 1px solid black" width="20px">@column</td>
+
+        @foreach (string row in myArray)
+        {
+
+            <td style="border: 1px solid black" width="20px">
+
+                @if (column == 1) {@row}
+                
+                else 
+                { 
+
+                }
+
+            </td>
+
+        }
+
+    </tr>
+
+    }
+
+</table>
+
+<p>
+
+    @{ 
+
+        byte[] data = new byte[500];
+        for(int i = 0; i < data.Length; i++)
+        {
+
+            Random rand = new Random();
+
+            rand.NextBytes(data);
+            Char c = (char)data[i];
+            @Html.DisplayFor(x => c);
+
+        }
+
+    }
+
+</p>
